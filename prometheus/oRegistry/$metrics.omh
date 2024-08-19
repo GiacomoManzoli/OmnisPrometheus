@@ -1,0 +1,3 @@
+Calculate metrics as ""
+Do iCollectorsList.$sendall(metrics.$assign(con(metrics,$sendallref.collector.$collect())))
+Quit method metrics

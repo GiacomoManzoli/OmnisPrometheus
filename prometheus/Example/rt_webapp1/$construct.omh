@@ -1,0 +1,22 @@
+# Enter your initialization code here
+Do $itasks.prometheus.$registry('example') Returns exampleRegistry
+
+Do exampleRegistry.$collector("webapp1_counter") Returns webappApp1Counter
+If isnull(webappApp1Counter)
+	# Collector object must be created inside the task "prometheus"
+	# otherwise when omnis destroys the current remote task, the collector object
+	# gets deleted
+	Do $itasks.prometheus.$newcollector($objects.oCounter) Returns webappApp1Counter
+	Do webappApp1Counter.$init("webapp1_counter","WebApp1 total session counter")
+	Do exampleRegistry.$register(webappApp1Counter)
+End If
+
+Do exampleRegistry.$collector("webapp1_active_sessions") Returns webappApp1Sessions
+If isnull(webappApp1Sessions)
+	Do $itasks.prometheus.$newcollector($objects.oGauge) Returns webappApp1Sessions
+	Do webappApp1Sessions.$init("webapp1_active_sessions","WebApp1 active sessions")
+	Do exampleRegistry.$register(webappApp1Sessions)
+End If
+
+Do webappApp1Counter.$inc()
+Do webappApp1Sessions.$inc()

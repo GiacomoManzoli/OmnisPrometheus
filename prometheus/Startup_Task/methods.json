@@ -1,0 +1,128 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$destruct",
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "initDefaultRegistry",
+		"order": 3,
+		"desc": "Init the default registry with some common metrics for JSClient apps",
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "activeConnections",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": "oSysCollector",
+				"sublen": 0
+			},
+			{
+				"name": "activeLicense",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oSysCollector",
+				"sublen": 0
+			},
+			{
+				"name": "registry",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oRegistry",
+				"sublen": 0
+			},
+			{
+				"name": "rtCollector",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oRemoteTaskCollector",
+				"sublen": 0
+			},
+			{
+				"name": "totalLicense",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oSysCollector",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$registry",
+		"order": 4,
+		"desc": "Creates and return the registry with the given name, registry name must be unique",
+		"pvardefs": [
+			{
+				"name": "pRegistryName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "registry",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oRegistry",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$getRegistries",
+		"order": 5,
+		"desc": "Returns the registries list",
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$newcollector",
+		"order": 6,
+		"desc": "Create a new collector of the given class.\r",
+		"notes": "Collector object must be created inside the task \"prometheus\" otherwise when omnis destroys the current remote task, the collector object gets deleted.",
+		"pvardefs": [
+			{
+				"name": "pClassRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "collector",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]

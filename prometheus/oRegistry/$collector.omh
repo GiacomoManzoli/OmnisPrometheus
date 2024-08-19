@@ -1,0 +1,6 @@
+Do iCollectorsList.$search($ref.name=pName,1,0,0,0)
+If iCollectorsList.$line>0
+	Quit method iCollectorsList.collector
+Else
+	Quit method #NULL
+End If

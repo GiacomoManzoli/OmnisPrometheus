@@ -1,0 +1,8 @@
+Do iRegistriesList.$search($ref.name=pRegistryName,1,0,0,0)
+If iRegistriesList.$line=0
+	Calculate registry as $objects.oRegistry.$newref()
+	Do iRegistriesList.$add(pRegistryName,registry)
+Else
+	Calculate registry as iRegistriesList.registry
+End If
+Quit method registry

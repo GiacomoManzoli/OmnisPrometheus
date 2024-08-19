@@ -1,0 +1,17 @@
+Do $cinst.$registry('default') Returns registry
+
+Do $objects.oSysCollector.$newref() Returns activeConnections
+Do activeConnections.$init("omnis_active_connections","Returns the number of the active connections to the Omnis server",244)
+Do registry.$register(activeConnections)
+
+Do $objects.oSysCollector.$newref() Returns activeLicense
+Do activeLicense.$init("omnis_active_licenses","Returns the current number of server licenses in use",257)
+Do registry.$register(activeLicense)
+
+Do $objects.oSysCollector.$newref() Returns totalLicense
+Do totalLicense.$init("omnis_total_licenses","Returns the maximum number of of server licenses set by the current serial number",256)
+Do registry.$register(totalLicense)
+
+Do $objects.oRemoteTaskCollector.$newref() Returns rtCollector
+Do rtCollector.$init("omnis_remote_tasks_total","Number of remote tasks connected to the server")
+Do registry.$register(rtCollector)

@@ -1,0 +1,69 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "%%a",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "a",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "exampleRegistry",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oRegistry",
+				"sublen": 0
+			},
+			{
+				"name": "webappApp1Counter",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oCounter",
+				"sublen": 0
+			},
+			{
+				"name": "webappApp1Sessions",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oGauge",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$destruct",
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "exampleRegistry",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oRegistry",
+				"sublen": 0
+			},
+			{
+				"name": "webappApp1Sessions",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oGauge",
+				"sublen": 0
+			}
+		]
+	}
+]

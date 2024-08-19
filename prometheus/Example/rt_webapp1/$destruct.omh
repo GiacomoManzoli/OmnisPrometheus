@@ -1,0 +1,4 @@
+# Enter your termination code here
+Do $itasks.prometheus.$registry('example') Returns exampleRegistry
+Do exampleRegistry.$collector("webapp1_active_sessions") Returns webappApp1Sessions
+Do webappApp1Sessions.$dec()

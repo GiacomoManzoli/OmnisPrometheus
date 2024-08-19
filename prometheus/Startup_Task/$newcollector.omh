@@ -1,0 +1,14 @@
+# Collector object must be created inside the task "prometheus"
+# otherwise when omnis destroys the current remote task, the collector object gets deleted.
+
+# An alternative approach could be to create all the collectors inside the target libs Startup_task
+
+Calculate collector as pClassRef.$newref()
+Quit method collector
+
+# BE AWARE
+# The one-liner
+# Quit method pClassRef.$newref()
+# CANNOT BE USED, because otherwise the object task isn't properly set.
+# With the direct "Quit method", the object.$task.$name is assigned to the caller task instace
+# while passing from a local variabile, the object.$task.$name becomes "prometheus"

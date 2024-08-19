@@ -1,0 +1,5 @@
+Do iRegistriesList.$define()
+Do iRegistriesList.$cols.$add('name',kCharacter,kSimplechar)
+Do iRegistriesList.$cols.$add('registry',kObjectref)
+
+Do method initDefaultRegistry

@@ -1,0 +1,12 @@
+Do $clibstartuptask.$getRegistries() Returns registriesList
+
+Do registriesList.$sendall(metrics.$assign(con(metrics,$sendallref.registry.$metrics(),kLf)))
+
+Begin text block (Carriage return,Linefeed)
+Line:Content-Type: text/plain; version=0.0.4
+Line:Content-Length: [binlength(chartoutf8(metrics))]
+Line:
+Line:[metrics]
+End text block
+Get text block httpRes
+Quit method httpRes

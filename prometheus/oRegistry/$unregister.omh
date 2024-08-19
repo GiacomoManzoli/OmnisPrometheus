@@ -1,0 +1,4 @@
+Do iCollectorsList.$search($ref.collector=pCollector,1,0,0,0)
+If iCollectorsList.$line>0
+	Do iCollectorsList.$remove(iCollectorsList.$line)
+End If

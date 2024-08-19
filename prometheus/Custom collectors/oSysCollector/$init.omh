@@ -1,0 +1,2 @@
+Do $inherited.$init(pName,pHelp)
+Calculate iSysNum as pSysNumber
