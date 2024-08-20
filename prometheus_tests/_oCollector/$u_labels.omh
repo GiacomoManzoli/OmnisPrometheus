@@ -1,0 +1,18 @@
+Calculate pairs as "label_1=value_1,label_2=value_2"
+Do $cinst.$when(pairs)
+
+Do iorMock.$labels(pairs) Returns self
+Do ioTAP.$is_objectref(self,iorMock,"$labels should return a self obj Ref.")
+Calculate labelsList as iorMock.iLabelsList
+Do ioTAP.$is_number(labelsList.$linecount,2,"All pairs are loaded")
+
+Do labelsList.$search($ref.label='label_1',1,0,0,0) Returns labelsList.$line
+Calculate value as labelsList.value
+Do ioTAP.$ok(labelsList.$line>0,"Has label_1")
+Do ioTAP.$is_char(value,"value_1","Right value for label_1")
+
+
+Do labelsList.$search($ref.label='label_2',1,0,0,0) Returns labelsList.$line
+Calculate value as labelsList.value
+Do ioTAP.$ok(labelsList.$line>0,"Has label_2")
+Do ioTAP.$is_char(value,"value_2","Right value for label_2")

@@ -1,0 +1,2 @@
+Do $inherited.$init(pName,pHelp,pLabels)
+Do method initValues

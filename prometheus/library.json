@@ -2,7 +2,7 @@
 	"omnisversion": "11.1",
 	"omnisbuild": 111037255,
 	"includes": [
-
+		"OMNISTAP"
 	],
 	"properties": {
 		"ignoreexternal": false,

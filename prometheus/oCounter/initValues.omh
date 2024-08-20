@@ -1,0 +1,11 @@
+For iLabelsList.$line from 1 to iLabelsList.$linecount step 1
+	Calculate label as iLabelsList.label
+	
+	If isclear(iValuesList.$cols.$findname(label))
+		Calculate currLine as iValuesList.$line ## Current line must be respected cause it refers the current counter
+		Do iValuesList.$cols.$add(label,kCharacter,kSimplechar)
+		Do iValuesList.$sendall($ref.[label].$assign(""))
+		Calculate iValuesList.$line as currLine
+	End If
+	
+End For

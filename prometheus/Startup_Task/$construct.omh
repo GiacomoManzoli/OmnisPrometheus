@@ -1,3 +1,15 @@
+If sys(2)=17
+	# Dev env, load OMNIS TAP
+	Calculate tapPath as con($clib.$parentfolder,"omnistap.lbs")
+	If FileOps.$doesfileexist(tapPath)
+		Do $libs.$add(tapPath)
+	Else
+		Send to trace log Omnis TAP not found
+	End If
+End If
+Do inherited
+
+
 Do iRegistriesList.$define()
 Do iRegistriesList.$cols.$add('name',kCharacter,kSimplechar)
 Do iRegistriesList.$cols.$add('registry',kObjectref)

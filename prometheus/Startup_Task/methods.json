@@ -1,17 +1,23 @@
 [
 	{
 		"name": "$construct",
-		"order": 1,
+		"order": 2,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
-
+			{
+				"name": "tapPath",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
 		]
 	},
 	{
 		"name": "$destruct",
-		"order": 2,
+		"order": 3,
 		"pvardefs": [
 
 		],
@@ -22,7 +28,7 @@
 	},
 	{
 		"name": "initDefaultRegistry",
-		"order": 3,
+		"order": 4,
 		"desc": "Init the default registry with some common metrics for JSClient apps",
 		"pvardefs": [
 
@@ -67,7 +73,7 @@
 	},
 	{
 		"name": "$registry",
-		"order": 4,
+		"order": 5,
 		"desc": "Creates and return the registry with the given name, registry name must be unique",
 		"pvardefs": [
 			{
@@ -91,7 +97,7 @@
 	},
 	{
 		"name": "$getRegistries",
-		"order": 5,
+		"order": 6,
 		"desc": "Returns the registries list",
 		"pvardefs": [
 
@@ -102,7 +108,7 @@
 	},
 	{
 		"name": "$newcollector",
-		"order": 6,
+		"order": 7,
 		"desc": "Create a new collector of the given class.\r",
 		"notes": "Collector object must be created inside the task \"prometheus\" otherwise when omnis destroys the current remote task, the collector object gets deleted.",
 		"pvardefs": [
@@ -123,6 +129,27 @@
 				"subtype": "",
 				"sublen": 0
 			}
+		]
+	},
+	{
+		"name": "---- Omnis TAP ----",
+		"order": 8,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$useSeparateTestLibrary",
+		"order": 9,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
 		]
 	}
 ]

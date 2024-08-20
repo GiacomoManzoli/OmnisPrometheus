@@ -1,0 +1,16 @@
+
+Do $cinst.$when("Normal counter")
+
+Do iorMock.$init("MOCK","MOCK")
+Do iorMock.$inc()
+Do iorMock.$collect() Returns result
+Do ioTAP.$ok(contains(result,"# TYPE MOCK counter"),"Proper prometheys type")
+Do ioTAP.$ok(contains(result,"MOCK 1"),"Normal counter with single value")
+
+Do $cinst.$when("Counter with labels")
+Do $cinst.$mock($libs.prometheus.$objects.oCounter) Returns iorMock
+Do iorMock.$init("MOCK","MOCK")
+Do iorMock.$labels("method=POST,api=/commessa").$inc()
+Do iorMock.$collect() Returns result
+Do ioTAP.$ok(contains(result,'MOCK{method="POST",api="/commessa"} 1'),"Labels properly exported")
+Do ioTAP.$notok(contains(result,"MOCK 0"),"Should not contain the default counter since it's 0")

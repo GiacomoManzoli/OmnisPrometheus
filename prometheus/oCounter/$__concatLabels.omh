@@ -1,0 +1,10 @@
+Do pairsList.$define(pair)
+For c from 2 to pValueRow.$colcount step 1
+	Calculate value as pValueRow.[c]
+	If not(isclear(value))
+		Calculate pair as con(pValueRow.$cols.[c].$name,'=',kDq,value,kDq)
+		Do pairsList.$add(pair)
+	End If
+End For
+Do join(pairsList,kComma,1,1) Returns labels
+Quit method labels

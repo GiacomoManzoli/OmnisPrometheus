@@ -1,7 +1,25 @@
 Begin text block (Linefeed)
 Line:# HELP [iName] [iHelp]
-Line:# TYPE [iName] counter
-Line:[iName] [iValue]
+Line:# TYPE [iName] [METRIC_TYPE]
+
+If iValuesList.$cols.$count()=1 ## Simple counter with no labels
+	Line:[iName] [iValuesList.1.value]
+Else
+	For i from 1 to iValuesList.$line step 1
+		Do $cinst.$__concatLabels(iValuesList.[i]) Returns labels
+		
+		If labels<>''
+			Calculate value as iValuesList.[i].value
+			Line:[iName]{[labels]} [value]
+		Else
+			# Counter value with no labels, exported only if it has a proper value
+			Calculate value as iValuesList.[i].value
+			If value>0
+				Line:[iName] [value]
+			End If
+		End If
+	End For
+End If
 Line:
 End text block
 Get text block metric

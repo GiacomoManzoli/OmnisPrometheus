@@ -1,0 +1,28 @@
+Do $inherited.$labels(pLabelString)
+
+# Creates missing cols for labels
+Do method initValues
+
+# iLabelsList has now the values of the specified labels
+Calculate searchCalculation as ""
+For iLabelsList.$line from 1 to iLabelsList.$linecount step 1
+	Calculate searchCalculation as con(searchCalculation,"&$ref.",iLabelsList.label,'=',kSq,iLabelsList.value,kSq)
+End For
+Calculate searchCalculation as mid(searchCalculation,2)
+
+# Search the Values List for a line matching the provided label-value pairs
+# If not found, a new line is added
+Do iValuesList.$search(eval(searchCalculation),1,0,0,0) Returns iValuesList.$line
+If iValuesList.$line=0
+	Do iValuesList.$add(0)
+	Calculate iValuesList.$line as iValuesList.$linecount
+	
+	For iLabelsList.$line from 1 to iLabelsList.$linecount step 1
+		Calculate label as iLabelsList.label
+		Calculate value as iLabelsList.value
+		Calculate iValuesList.[iValuesList.$line].[label] as value
+	End For
+	
+End If
+
+Quit method $cinst.$objref()

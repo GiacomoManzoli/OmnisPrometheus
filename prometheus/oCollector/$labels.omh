@@ -1,0 +1,18 @@
+Do split(pLabelString,kComma,1) Returns pairsList
+
+Do iLabelsList.$sendall($ref.value.$assign(""))
+For pairsList.$line from 1 to pairsList.$linecount step 1
+	Calculate kvPair as pairsList.C1
+	Do split(kvPair,'=') Returns kvList
+	Calculate label as kvList.1.C1
+	Calculate value as kvList.2.C1
+	Do iLabelsList.$search($ref.label=label,1,0,0,0) Returns iLabelsList.$line
+	If iLabelsList.$line
+		Calculate iLabelsList.value as value
+	Else
+		Do iLabelsList.$add(label,value)
+	End If
+End For
+
+
+Quit method $cinst.$objref()

@@ -2,7 +2,7 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.1",
 	"omnisbuild": 111037255,
-	"internalversion": 82,
+	"internalversion": 1213,
 	"superclass": "oCollector",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
@@ -10,11 +10,19 @@
 	],
 	"ivardefs": [
 		{
-			"name": "iValue",
-			"order": 1,
-			"type": "kNumber",
-			"subtype": "kFloatdp",
+			"name": "iValuesList",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "METRIC_TYPE",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"desc": "Prometheus metric type"
 		}
 	],
 	"properties": {
@@ -28,9 +36,9 @@
 		"desc": "",
 		"editor": "",
 		"editordata": "",
-		"external": false,
+		"external": true,
 		"issupercomponent": false,
-		"moddate": "2024-08-19 17:52:27",
+		"moddate": "2024-08-20 13:05:29",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

@@ -2,7 +2,7 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.1",
 	"omnisbuild": 111037255,
-	"internalversion": 146,
+	"internalversion": 479,
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 
@@ -13,14 +13,24 @@
 			"order": 2,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
-			"sublen": 100000000
+			"sublen": 100000000,
+			"desc": "Help description"
+		},
+		{
+			"name": "iLabelsList",
+			"order": 3,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "List of labels aviable and their current values "
 		},
 		{
 			"name": "iName",
 			"order": 1,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
-			"sublen": 100000000
+			"sublen": 100000000,
+			"desc": "Name of the metric"
 		}
 	],
 	"properties": {
@@ -37,7 +47,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2024-08-19 19:15:25",
+		"moddate": "2024-08-20 12:39:25",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

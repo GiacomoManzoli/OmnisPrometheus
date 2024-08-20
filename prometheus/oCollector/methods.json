@@ -1,5 +1,15 @@
 [
 	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
 		"name": "$init",
 		"order": 2,
 		"pvardefs": [
@@ -18,10 +28,26 @@
 				"subtype": "kSimplechar",
 				"sublen": 100000000,
 				"param": 2
+			},
+			{
+				"name": "pLabels",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3,
+				"initval": "''",
+				"desc": "CSV list of labels"
 			}
 		],
 		"lvardefs": [
-
+			{
+				"name": "labelsList",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
 		]
 	},
 	{
@@ -62,6 +88,96 @@
 		],
 		"lvardefs": [
 
+		]
+	},
+	{
+		"name": "validateLabel",
+		"order": 7,
+		"pvardefs": [
+			{
+				"name": "pLabel",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "crow",
+				"order": 3,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "mlen",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "pos",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$labels",
+		"order": 8,
+		"desc": "Sets the values for the given labels",
+		"pvardefs": [
+			{
+				"name": "pLabelString",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1,
+				"desc": "Key-value string for labels es: label_1=value_1,label_2=value_2"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "kvList",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "kvPair",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "label",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "pairsList",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "value",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
 		]
 	}
 ]

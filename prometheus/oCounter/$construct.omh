@@ -1,1 +1,7 @@
-Calculate iValue as 0
+Do inherited
+Do iValuesList.$define()
+Do iValuesList.$cols.$add("value",kNumber,kFloatdp)
+Do iValuesList.$add(0)
+Calculate iValuesList.$line as 1
+
+Calculate METRIC_TYPE as "counter"

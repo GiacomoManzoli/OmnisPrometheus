@@ -1,1 +1,2 @@
-Calculate iValue as iValue+pValue
+Calculate value as iValuesList.value+pValue
+Calculate iValuesList.value as value

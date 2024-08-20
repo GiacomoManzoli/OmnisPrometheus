@@ -1,0 +1,34 @@
+Calculate pairs as "label_1=value_1,label_2=value_2"
+Do $cinst.$when(pairs)
+
+Do iorMock.$labels(pairs) Returns self
+Do ioTAP.$is_objectref(self,iorMock,"$labels should return a self obj Ref.")
+Calculate labelsList as iorMock.iLabelsList
+Do ioTAP.$is_number(labelsList.$linecount,2,"All pairs are loaded")
+
+Do labelsList.$search($ref.label='label_1',1,0,0,0) Returns labelsList.$line
+Calculate value as labelsList.value
+Do ioTAP.$ok(labelsList.$line>0,"Has label_1")
+Do ioTAP.$is_char(value,"value_1","Right value for label_1")
+
+
+Do labelsList.$search($ref.label='label_2',1,0,0,0) Returns labelsList.$line
+Calculate value as labelsList.value
+Do ioTAP.$ok(labelsList.$line>0,"Has label_2")
+Do ioTAP.$is_char(value,"value_2","Right value for label_2")
+
+
+Calculate counterValuesList as iorMock.iValuesList
+Calculate counterValuesListLine as counterValuesList.$line
+
+Do counterValuesList.$cols.$findname("label_1") Returns refCol
+Do ioTAP.$isnotclear(refCol,"Values table should have the label_1 col")
+Do counterValuesList.$cols.$findname("label_2") Returns refCol
+Do ioTAP.$isnotclear(refCol,"Values table should have the label_2 col")
+
+
+Do counterValuesList.$search($ref.label_1='value_1'&$ref.label_2='value_2',1,0,0,0) Returns expectedLine
+
+Do ioTAP.$is_number(counterValuesList.$linecount,2,"Should have 2 values")
+Do ioTAP.$ok(expectedLine>0,"The values table should have a row for the given pair")
+Do ioTAP.$is_number(counterValuesListLine,expectedLine,"The counter value table current line should match the given label-value pair")

@@ -1,0 +1,3 @@
+Do iLabelsList.$define()
+Do iLabelsList.$cols.$add("label",kCharacter,kSimplechar)
+Do iLabelsList.$cols.$add("value",kCharacter,kSimplechar)

@@ -1,2 +1,13 @@
 Calculate iName as pName
 Calculate iHelp as pHelp
+
+If not(isclear(pLabels))
+	Calculate labelsList as split(pLabels,kComma,kTrue)
+	Do iLabelsList.$merge(labelsList)
+	Do iLabelsList.$sendall($ref.value.$assign(""))
+	
+	# Calculate iLabelsList.$cols.1.$name as "label"
+	# For iLabelsList.$line from 1 to iLabelsList.$line step 1
+	# Do method validateLabel (iLabelsList.label) Returns iLabelsList.$selected
+	# End For
+End If

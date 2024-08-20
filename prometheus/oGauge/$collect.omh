@@ -1,8 +1,0 @@
-Begin text block (Linefeed)
-Line:# HELP [iName] [iHelp]
-Line:# TYPE [iName] gauge
-Line:[iName] [iValue]
-Line:
-End text block
-Get text block metric
-Quit method metric

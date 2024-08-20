@@ -10,14 +10,57 @@
 		]
 	},
 	{
-		"name": "$collect",
+		"name": "$init",
 		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pHelp",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			},
+			{
+				"name": "pLabels",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3,
+				"initval": "''",
+				"desc": "CSV list of labels"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "initValues",
+		"order": 3,
+		"desc": "If necessary, adds a column for each label",
 		"pvardefs": [
 
 		],
 		"lvardefs": [
 			{
-				"name": "metric",
+				"name": "currLine",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "label",
 				"order": 1,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
@@ -26,8 +69,152 @@
 		]
 	},
 	{
+		"name": "$collect",
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "i",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "labels",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "metric",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "value",
+				"order": 7,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$__concatLabels",
+		"order": 5,
+		"desc": "Concats the label-value pairs in a way suitable for the metric export (lable=\"value\",label2=\"value2\")\ri.e.:\rdialer_name=\"alertmanager\",reason=\"resolution\"",
+		"notes": "This is an internal method, should be called from outside\r",
+		"pvardefs": [
+			{
+				"name": "pValueRow",
+				"order": 4,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "c",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "labels",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "pair",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "pairsList",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "value",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$labels",
+		"order": 7,
+		"desc": "Set the current counter to the one identified by the label-value pairs",
+		"pvardefs": [
+			{
+				"name": "pLabelString",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1,
+				"desc": "Key-value string for labels es: label_1=value_1,label_2=value_2"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "c",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "colname",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "label",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "searchCalculation",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "value",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
 		"name": "$inc",
-		"order": 3,
+		"order": 8,
+		"desc": "Incrementes the current counter (the default one or the one previously set by $label())",
 		"pvardefs": [
 			{
 				"name": "pValue",
@@ -40,7 +227,13 @@
 			}
 		],
 		"lvardefs": [
-
+			{
+				"name": "value",
+				"order": 2,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0
+			}
 		]
 	}
 ]

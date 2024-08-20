@@ -10,23 +10,31 @@
 		]
 	},
 	{
-		"name": "$collect",
+		"name": "$dec",
 		"order": 2,
 		"pvardefs": [
-
+			{
+				"name": "pValue",
+				"order": 1,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0,
+				"param": 1,
+				"initval": "1"
+			}
 		],
 		"lvardefs": [
 			{
-				"name": "metric",
-				"order": 1,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
+				"name": "value",
+				"order": 2,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0
 			}
 		]
 	},
 	{
-		"name": "$inc",
+		"name": "$set",
 		"order": 3,
 		"pvardefs": [
 			{
@@ -40,48 +48,18 @@
 			}
 		],
 		"lvardefs": [
-
-		]
-	},
-	{
-		"name": "$dec",
-		"order": 4,
-		"pvardefs": [
 			{
-				"name": "pValue",
-				"order": 1,
+				"name": "value",
+				"order": 2,
 				"type": "kNumber",
 				"subtype": "kFloatdp",
-				"sublen": 0,
-				"param": 1,
-				"initval": "1"
+				"sublen": 0
 			}
-		],
-		"lvardefs": [
-
-		]
-	},
-	{
-		"name": "$set",
-		"order": 5,
-		"pvardefs": [
-			{
-				"name": "pValue",
-				"order": 1,
-				"type": "kNumber",
-				"subtype": "kFloatdp",
-				"sublen": 0,
-				"param": 1,
-				"initval": "1"
-			}
-		],
-		"lvardefs": [
-
 		]
 	},
 	{
 		"name": "$setToCurrentTime",
-		"order": 6,
+		"order": 4,
 		"pvardefs": [
 
 		],
