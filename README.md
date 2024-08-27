@@ -43,7 +43,7 @@ By default  metrics are exposed with a ultra thin client call to the `metrics` r
 http://127.0.0.1:37255/ultra?OmnisClass=metrics&OmnisLibrary=prometheus
 ```
 
-To query it from Prometheys, add to the prometheus.yml
+To query it from Prometheus, add to the prometheus.yml
 
 ```
   - job_name: omnis_2
