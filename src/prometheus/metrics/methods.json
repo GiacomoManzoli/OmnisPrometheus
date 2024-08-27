@@ -7,6 +7,13 @@
 		],
 		"lvardefs": [
 			{
+				"name": "bin1",
+				"order": 4,
+				"type": "kBinary",
+				"subtype": 0,
+				"sublen": 100000000
+			},
+			{
 				"name": "httpRes",
 				"order": 2,
 				"type": "kCharacter",
