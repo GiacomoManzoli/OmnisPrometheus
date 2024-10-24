@@ -1,0 +1,7 @@
+If iCount>0
+	Quit method
+End If
+
+Do iBucketsList.$add(pLE,0)
+Do iBucketsList.$sort($ref.C1)
+Do iBucketsList.$cols.1.$removeduplicates()

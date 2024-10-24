@@ -2,7 +2,7 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.1",
 	"omnisbuild": 111037255,
-	"internalversion": 1213,
+	"internalversion": 369,
 	"superclass": "oCollector",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
@@ -10,15 +10,38 @@
 	],
 	"ivardefs": [
 		{
-			"name": "iValuesList",
-			"order": 2,
+			"name": "iBucketsList",
+			"order": 1,
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
 		},
 		{
-			"name": "METRIC_TYPE",
+			"name": "iCanAddBuckets",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "iCount",
 			"order": 3,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0"
+		},
+		{
+			"name": "iSum",
+			"order": 4,
+			"type": "kNumber",
+			"subtype": "kFloatdp",
+			"sublen": 0,
+			"initval": "0"
+		},
+		{
+			"name": "METRIC_TYPE",
+			"order": 5,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000,
@@ -32,13 +55,13 @@
 
 		},
 		"componenttype": "kCompStoreHidden",
-		"createdate": "2024-08-19 17:44:37",
+		"createdate": "2024-10-23 23:10:12",
 		"desc": "",
 		"editor": "",
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2024-08-20 13:05:29",
+		"moddate": "2024-10-24 07:59:18",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

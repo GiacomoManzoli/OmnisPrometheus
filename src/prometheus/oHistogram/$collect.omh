@@ -1,0 +1,13 @@
+Begin text block (Linefeed)
+Line:# HELP [iName] [iHelp]
+Line:# TYPE [iName] [METRIC_TYPE]
+For iBucketsList.$line from 1 to iBucketsList.$linecount step 1
+	Line:[iName]_bucket{le="[iBucketsList.le]"} [iBucketsList.count]
+End For
+Line:[iName]_bucket{le="+Inf"} [iCount]
+Line:[iName]_total [iSum]
+Line:[iName]_count [iCount]
+Line:
+End text block
+Get text block metric
+Quit method metric

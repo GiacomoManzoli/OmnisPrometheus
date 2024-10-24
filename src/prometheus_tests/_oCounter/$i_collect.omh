@@ -4,7 +4,7 @@ Do $cinst.$when("Normal counter")
 Do iorMock.$init("MOCK","MOCK")
 Do iorMock.$inc()
 Do iorMock.$collect() Returns result
-Do ioTAP.$ok(contains(result,"# TYPE MOCK counter"),"Proper prometheys type")
+Do ioTAP.$ok(contains(result,"# TYPE MOCK counter"),"Proper prometheus type")
 Do ioTAP.$ok(contains(result,"MOCK 1"),"Normal counter with single value")
 
 Do $cinst.$when("Counter with labels")

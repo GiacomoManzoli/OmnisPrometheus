@@ -2,37 +2,40 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.1",
 	"omnisbuild": 111037255,
-	"internalversion": 3,
-	"superclass": "oCollector",
+	"internalversion": 465,
+	"superclass": "omnistap.ogTAPSuper",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
 
 	],
 	"ivardefs": [
-
+		{
+			"name": "iorMock",
+			"order": 1,
+			"type": "kObjectref",
+			"subtype": "prometheus.oHistogram",
+			"sublen": 0
+		}
 	],
 	"properties": {
 		"canremotedebugwhenlocked": false,
 		"collectperformancedata": false,
+		"componenticon": 0,
 		"componentinfo": {
 
 		},
 		"componenttype": "kCompStoreHidden",
-		"createdate": "2024-08-19 18:16:14",
+		"createdate": "2024-10-23 23:27:29",
 		"desc": "",
 		"editor": "",
 		"editordata": "",
-		"external": false,
+		"external": true,
 		"issupercomponent": false,
-		"moddate": "2024-08-19 18:16:30",
+		"moddate": "2024-10-24 08:06:48",
 		"selfcontained": false,
-		"showascheckedout": false,
+		"showascheckedout": true,
 		"userinfo": "",
 		"vcsrevision": 0,
 		"version": ""
-	},
-	"inheritedproperties": [
-		"designtaskname",
-		"componenticon"
-	]
+	}
 }

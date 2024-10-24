@@ -1,0 +1,18 @@
+
+Do $cinst.$when("Histogram")
+
+Do iorMock.$init("MOCK","MOCK")
+Do iorMock.$addBucket(1)
+Do iorMock.$addBucket(2)
+Do iorMock.$addBucket(3)
+
+Do iorMock.$collect() Returns result
+Do ioTAP.$ok(contains(result,"# TYPE MOCK histogram"),"Proper prometheus type")
+
+Do iorMock.$observe(3)
+Do iorMock.$collect() Returns result
+
+Do ioTAP.$ok(contains(result,"{le="),"Exports the lower or equal")
+Do split(result,kLf) Returns lines
+
+Do ioTAP.$is_number(lines.$linecount,2+4+2+2,"2 header lines, 4 buckets, 2 summary lines and 2 empty ")

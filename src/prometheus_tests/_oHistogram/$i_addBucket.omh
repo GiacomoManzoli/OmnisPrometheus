@@ -1,0 +1,38 @@
+Do $cinst.$when("Bucket creation")
+
+Do iorMock.$init("MOCK","MOCK")
+Do iorMock.$addBucket(1)
+Do iorMock.$addBucket(2)
+Do iorMock.$addBucket(3)
+
+Calculate bucketList as iorMock.iBucketsList
+
+Do ioTAP.$is_number(bucketList.$linecount,3,"Three buckets (+Inf not included in bucket list)")
+
+
+Do $cinst.$when("Stop adding bucket after first observation")
+
+
+Do iorMock.$init("MOCK","MOCK")
+Do iorMock.$addBucket(1)
+Do iorMock.$addBucket(2)
+Do iorMock.$observe(0,3)
+Do iorMock.$addBucket(3)
+
+Calculate bucketList as iorMock.iBucketsList
+
+Do ioTAP.$is_number(bucketList.$linecount,2,"Two buckets (+Inf not included in bucket list) and <=3 not created")
+
+
+Do $cinst.$when("buckets are created not in order, the list is still sorted")
+
+Do iorMock.$init("MOCK","MOCK")
+Do iorMock.$addBucket(2)
+Do iorMock.$addBucket(1)
+Do iorMock.$addBucket(3)
+Calculate bucketList as iorMock.iBucketsList
+
+
+Do ioTAP.$is_number(bucketList.1.le,1,"First bucket is the lower limit")
+Do ioTAP.$is_number(bucketList.2.le,2,"Second bucket is 2")
+Do ioTAP.$is_number(bucketList.3.le,3,"Third bucket is 3")

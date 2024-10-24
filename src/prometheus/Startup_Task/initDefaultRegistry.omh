@@ -9,7 +9,7 @@ Do activeLicense.$init("omnis_active_licenses","Returns the current number of se
 Do registry.$register(activeLicense)
 
 Do $objects.oSysCollector.$newref() Returns totalLicense
-Do totalLicense.$init("omnis_total_licenses","Returns the maximum number of server licenses set by the current serial number",256)
+Do totalLicense.$init("omnis_total_licenses","Returns the maximum number of of server licenses set by the current serial number",256)
 Do registry.$register(totalLicense)
 
 Do $objects.oRemoteTaskCollector.$newref() Returns rtCollector

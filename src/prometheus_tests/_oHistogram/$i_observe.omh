@@ -1,0 +1,16 @@
+
+Do $cinst.$when("Some observation")
+
+Do iorMock.$init("MOCK","MOCK")
+Do iorMock.$addBucket(1)
+Do iorMock.$addBucket(2)
+Do iorMock.$addBucket(3)
+
+Do iorMock.$observe(1,1)
+
+Calculate bucketList as iorMock.iBucketsList
+
+Do ioTAP.$is_number(iorMock.iCount,1,"Single observation")
+Do ioTAP.$is_number(bucketList.1.count,0,"No observation for <= 1")
+Do ioTAP.$is_number(bucketList.2.count,1,"One observation for <= 2")
+Do ioTAP.$is_number(bucketList.3.count,1,"One observation for <= 3")

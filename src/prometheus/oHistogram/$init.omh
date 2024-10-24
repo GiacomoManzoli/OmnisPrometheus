@@ -1,0 +1,10 @@
+Do $inherited.$init(pName,pHelp,'') ## No label support (yet)
+
+Do iBucketsList.$define()
+Do iBucketsList.$cols.$add("le",kNumber,kFloatdp)
+Do iBucketsList.$cols.$add("count",kInteger,k32bitint)
+
+
+Calculate iCount as 0
+Calculate iSum as 0
+# Calculate iCanAddBuckets as kTrue

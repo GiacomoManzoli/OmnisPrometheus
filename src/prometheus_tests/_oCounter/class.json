@@ -2,7 +2,7 @@
 	"classtype": "kObjectclass",
 	"omnisversion": "11.1",
 	"omnisbuild": 111037255,
-	"internalversion": 629,
+	"internalversion": 634,
 	"superclass": "omnistap.ogTAPSuper",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
@@ -31,7 +31,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2024-08-20 13:05:59",
+		"moddate": "2024-10-24 08:06:47",
 		"selfcontained": false,
 		"showascheckedout": true,
 		"userinfo": "",

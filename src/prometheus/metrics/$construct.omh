@@ -6,8 +6,7 @@ Begin text block (Carriage return,Linefeed)
 Line:Content-Type: text/plain; version=0.0.4
 Line:Content-Length: [binlength(chartoutf8(metrics))]
 Line:
-# Text to avoid the extra kCr which breaks the response with the omnisapi.dll
-Text:[metrics]
+Line:[metrics]
 End text block
 Get text block httpRes
 Quit method httpRes
