@@ -1,0 +1,9 @@
+Do iTimesList.$search($ref.name=pName,1,0,0,0) Returns iTimesList.$line
+If iTimesList.$line>0
+	Calculate oTime as iTimesList.time
+Else
+	Calculate oTime as $objects.oTime.$newref()
+	Do iTimesList.$add(pName,oTime)
+End If
+
+Quit method oTime

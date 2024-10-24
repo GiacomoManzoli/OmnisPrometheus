@@ -1,0 +1,44 @@
+[
+	{
+		"name": "$start",
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$stop",
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pUnit",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "kCentiSecond",
+				"desc": "DateTimePart (kCentiSecond, kSecond, kMinute....)"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "d",
+				"order": 1,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0
+			},
+			{
+				"name": "now2",
+				"order": 3,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 8
+			}
+		]
+	}
+]

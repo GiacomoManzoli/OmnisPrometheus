@@ -1,0 +1,2 @@
+Do method time (pName) Returns oTime
+Do oTime.$start()

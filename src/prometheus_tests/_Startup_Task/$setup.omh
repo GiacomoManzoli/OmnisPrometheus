@@ -1,0 +1,3 @@
+Do inherited
+
+Do $cinst.$mock($libs.prometheus.$tasks.Startup_Task) Returns iirMock

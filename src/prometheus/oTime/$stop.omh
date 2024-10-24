@@ -1,0 +1,4 @@
+#
+Calculate now2 as #D
+Calculate d as ddiff(pUnit,iStartDT,now2)
+Quit method d

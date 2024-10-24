@@ -1,0 +1,7 @@
+Do method time (pName) Returns oTime
+Calculate t as oTime.$stop(pUnit)
+
+Do iTimesList.$search($ref.name=pName,1,0,0,0) Returns iTimesList.$line
+Do iTimesList.$remove(iTimesList.$line)
+
+Quit method t

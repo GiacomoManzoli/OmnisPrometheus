@@ -1,29 +1,19 @@
 {
-	"classtype": "kTask",
+	"classtype": "kObjectclass",
 	"omnisversion": "11.1",
 	"omnisbuild": 111037255,
-	"internalversion": 1022,
-	"superclass": "omnistap.kgTAPTask",
-	"tvardefs": [
-
-	],
+	"internalversion": 33,
+	"designtaskname": "Startup_Task",
 	"cvardefs": [
 
 	],
 	"ivardefs": [
 		{
-			"name": "iRegistriesList",
+			"name": "iStartDT",
 			"order": 1,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iTimesList",
-			"order": 2,
-			"type": "kList",
-			"subtype": "",
-			"sublen": 0
+			"type": "kDate",
+			"subtype": "kDatetime",
+			"sublen": 8
 		}
 	],
 	"properties": {
@@ -34,13 +24,14 @@
 
 		},
 		"componenttype": "kCompStoreHidden",
-		"createdate": "2024-08-17 16:59:02",
+		"createdate": "2024-10-24 08:22:17",
 		"desc": "",
 		"editor": "",
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2024-10-24 08:31:52",
+		"moddate": "2024-10-24 08:25:46",
+		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",
 		"vcsrevision": 0,

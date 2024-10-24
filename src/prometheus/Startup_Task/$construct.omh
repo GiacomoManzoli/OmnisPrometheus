@@ -14,4 +14,9 @@ Do iRegistriesList.$define()
 Do iRegistriesList.$cols.$add('name',kCharacter,kSimplechar)
 Do iRegistriesList.$cols.$add('registry',kObjectref)
 
+
+Do iTimesList.$define()
+Do iTimesList.$cols.$add('name',kCharacter,kSimplechar)
+Do iTimesList.$cols.$add('time',kObjectref)
+
 Do method initDefaultRegistry

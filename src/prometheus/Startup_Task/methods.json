@@ -1,7 +1,7 @@
 [
 	{
 		"name": "$construct",
-		"order": 2,
+		"order": 1,
 		"pvardefs": [
 
 		],
@@ -17,7 +17,7 @@
 	},
 	{
 		"name": "$destruct",
-		"order": 3,
+		"order": 2,
 		"pvardefs": [
 
 		],
@@ -28,7 +28,7 @@
 	},
 	{
 		"name": "initDefaultRegistry",
-		"order": 4,
+		"order": 3,
 		"desc": "Init the default registry with some common metrics for JSClient apps",
 		"pvardefs": [
 
@@ -73,7 +73,7 @@
 	},
 	{
 		"name": "$registry",
-		"order": 5,
+		"order": 4,
 		"desc": "Creates and return the registry with the given name, registry name must be unique",
 		"pvardefs": [
 			{
@@ -97,7 +97,7 @@
 	},
 	{
 		"name": "$getRegistries",
-		"order": 6,
+		"order": 5,
 		"desc": "Returns the registries list",
 		"pvardefs": [
 
@@ -108,7 +108,7 @@
 	},
 	{
 		"name": "$newcollector",
-		"order": 7,
+		"order": 6,
 		"desc": "Create a new collector of the given class.\r",
 		"notes": "Collector object must be created inside the task \"prometheus\" otherwise when omnis destroys the current remote task, the collector object gets deleted.",
 		"pvardefs": [
@@ -132,8 +132,105 @@
 		]
 	},
 	{
-		"name": "---- Omnis TAP ----",
+		"name": "---- Time utils ----",
+		"order": 7,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "time",
 		"order": 8,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "oTime",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oTime",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$timeStart",
+		"order": 9,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "oTime",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oTime",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$timeStop",
+		"order": 10,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pUnit",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "kCentiSecond",
+				"desc": "DateTimePart (kCentiSecond, kSecond, kMinute....)"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "oTime",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "oTime",
+				"sublen": 0
+			},
+			{
+				"name": "t",
+				"order": 4,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "---- Omnis TAP ----",
+		"order": 11,
 		"pvardefs": [
 
 		],
@@ -144,7 +241,7 @@
 	},
 	{
 		"name": "$useSeparateTestLibrary",
-		"order": 9,
+		"order": 12,
 		"pvardefs": [
 
 		],
